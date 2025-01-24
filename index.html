@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitten in Space</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background: black url('images/mochi.jpg') no-repeat center bottom;
+	    background-size: 100% auto;
+            color: orange;
+            font-size: 3rem;
+            font-family: Arial, sans-serif;
+            text-align: left;
+	    padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    kittenin.space
+    <script>
+        // Array of images with their alignment and centering
+        const images = [
+            {
+                url: 'images/mochi.jpg',
+                position: 'center bottom', 
+		color: 'orange',
+            },
+            {
+                url: 'images/mrsherbert.jpg',
+                position: 'center bottom',
+		color: 'red',
+            },
+            {
+                url: 'images/pepperjack.jpg',
+                position: 'center center',
+		color: 'purple',
+            },
+            {
+                url: 'images/blueberry.jpg',
+                position: 'center top',
+		color: 'yellow',
+            },
+            {
+                url: 'images/burrito.jpg',
+                position: 'center center',
+		color: 'blue',
+            },
+        ];
+
+        // Randomly select one image
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+
+        // Apply the selected image's properties
+        document.body.style.backgroundImage = `url('${randomImage.url}')`;
+        document.body.style.backgroundPosition = randomImage.position;
+        document.body.style.color = randomImage.color;
+    </script>
+</body>
+</html>
