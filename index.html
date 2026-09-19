@@ -9,20 +9,43 @@
             margin: 0;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             background: black url('images/mochi.jpg') repeat center bottom;
 	    background-size: 100% auto;
             color: orange;
-            font-size: 3rem;
+            font-size: 2rem;
             font-family: Arial, sans-serif;
             text-align: left;
 	    padding: 20px;
         }
+	h1 {
+	    font-size: 3rem;
+	    margin: 0;
+        padding: 0;
+	}
+	p {
+	    padding: 0;
+        margin: 0;
+	}
+	a {
+	    color: var(--link-color, inherit);
+	    font-weight: bold;
+	    text-decoration: none;
+	}
+	a::after {
+	    content: ' \2192';
+	}
+	a:hover, a:focus {
+	    filter: brightness(1.3);
+	}
     </style>
 </head>
 <body>
-    kittenin.space
+	<h1>kittenin.space</h1>
+    <p><a href="http://crfs.kittenin.space">Count Rows From Sheep</a></p>
+	<p><a href="http://cozytime.kittenin.space">Cozy Timer</a></p>
     <script>
         // Array of images with their alignment and centering
         const images = [
@@ -30,31 +53,37 @@
                 url: 'images/mochi.jpg',
                 position: 'center bottom', 
 		color: 'orange',
+		linkColor: 'gold',
             },
             {
                 url: 'images/mrsherbert.jpg',
                 position: 'center bottom',
 		color: 'red',
+		linkColor: 'lightsalmon',
             },
             {
                 url: 'images/pepperjack.jpg',
                 position: 'center center',
 		color: 'purple',
+		linkColor: 'plum',
             },
             {
                 url: 'images/blueberry.jpg',
                 position: 'center top',
 		color: 'yellow',
+		linkColor: 'khaki',
             },
             {
                 url: 'images/burrito.jpg',
                 position: 'center center',
 		color: 'blue',
+		linkColor: 'lightskyblue',
             },
             {
                 url: 'images/little.jpg',
                 position: 'center center',
 		color: 'teal',
+		linkColor: 'aquamarine',
             },
         ];
 
@@ -65,6 +94,7 @@
         document.body.style.backgroundImage = `url('${randomImage.url}')`;
         document.body.style.backgroundPosition = randomImage.position;
         document.body.style.color = randomImage.color;
+        document.body.style.setProperty('--link-color', randomImage.linkColor);
     </script>
 </body>
 </html>
